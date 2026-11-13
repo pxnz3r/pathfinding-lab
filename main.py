@@ -24,6 +24,7 @@ from pathfinding_lab.city import LANDMARKS, CityMap, CityProblem, city_figure
 from pathfinding_lab.grids import GridProblem, grid_figure, make_maze, make_obstacle_grid
 from pathfinding_lab.puzzle import HEURISTICS, PuzzleProblem, scramble
 from pathfinding_lab.report import FOLDER, results_sections
+from pathfinding_lab.statistics import branching_table, comparisons_table
 from pxlab.common import save_figure, save_table, set_plot_style, write_results_doc
 from pxlab.search.algorithms import ALGORITHMS, a_star_search, breadth_first_search
 
@@ -200,13 +201,19 @@ def main():
     """
     set_plot_style()
     print("Maze: breadth-first against depth-first")
-    maze_study()
+    maze = maze_study()
     print("8-puzzle: A* against breadth-first")
-    puzzle_study()
+    puzzle = puzzle_study()
     print("Robot: greedy best-first against A*")
-    robot_study()
+    robot = robot_study()
     print("City map: breadth-first, uniform cost and A*")
-    city_study()
+    city = city_study()
+
+    print("Statistics: paired sign tests and effective branching factors")
+    comparisons = comparisons_table(maze, puzzle, robot, city)
+    save_table(comparisons, f"{FOLDER}/comparisons.csv")
+    print(comparisons[["Compared", "On", "First is smaller on", "Second is smaller on", "Verdict"]].to_string())
+    save_table(branching_table(puzzle), f"{FOLDER}/branching.csv")
     write_results_doc(
         "Results",
         "Produced by `python main.py`. Times are from one laptop run in plain Python and only comparable "

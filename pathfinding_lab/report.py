@@ -55,4 +55,18 @@ def results_sections():
                 ("figure", f"{FOLDER}/city_example.png"),
             ],
         ),
+        (
+            "Statistics",
+            [
+                (
+                    "text",
+                    "Each pair of algorithms ran on the same instances, so every instance is a paired comparison. "
+                    "The sign test gives the chance of one side winning that many pairs if neither were really "
+                    "better. The effective branching factor b* is the branching of an even tree of the solution's "
+                    "depth holding as many nodes as the search explored: closer to 1 means a better-informed search.",
+                ),
+                ("table", "Paired comparisons (smaller is better)", f"{FOLDER}/comparisons.csv"),
+                ("table", "8-puzzle: effective branching factor by solution depth", f"{FOLDER}/branching.csv"),
+            ],
+        ),
     ]

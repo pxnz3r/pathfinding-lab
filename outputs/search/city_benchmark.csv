@@ -1,4 +1,4 @@
 Algorithm,Metres,Metres over shortest,Street segments,Explored,Milliseconds,Routes
-Breadth-first,1074.8,141.5,75.0,1780.8,2.3,45
-Uniform cost,933.3,0.0,83.5,1791.9,3.5,45
-A*,933.3,0.0,83.5,533.3,2.8,45
+Breadth-first,1074.8,141.5,75.0,1780.8,2.6,45
+Uniform cost,933.3,0.0,83.5,1791.9,4.9,45
+A*,933.3,0.0,83.5,533.3,3.3,45

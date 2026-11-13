@@ -1,0 +1,9 @@
+Study,Compared,On,Instances,"Median, first","Median, second",First is smaller on,Second is smaller on,p-value (sign test),Verdict
+Maze,Breadth-first vs Depth-first,Explored,40,362.5,351.5,12,27,0.023703,real difference
+Maze,Breadth-first vs Depth-first,Path steps,40,77.0,148.0,40,0,0.0,real difference
+8-puzzle,A* (manhattan distance) vs A* (misplaced tiles),Explored,70,99.5,912.0,61,0,0.0,real difference
+8-puzzle,A* (misplaced tiles) vs Breadth-first,Explored,70,912.0,20325.0,70,0,0.0,real difference
+Robot,Greedy best-first vs A*,Explored,46,94.5,191.0,46,0,0.0,real difference
+Robot,A* vs Greedy best-first,Path steps,46,78.0,88.0,46,0,0.0,real difference
+City map,A* vs Uniform cost,Explored,45,363.0,1755.0,45,0,0.0,real difference
+City map,Uniform cost vs Breadth-first,Metres,45,818.8000000000002,935.4999999999999,39,0,0.0,real difference
