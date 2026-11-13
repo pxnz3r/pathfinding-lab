@@ -1,8 +1,28 @@
-# Pathfinding lab
+<div align="center">
 
-Breadth-first, depth-first, uniform cost, greedy best-first and A* search, compared on four problems: random mazes, the 8-puzzle, a robot on an obstacle grid and walking routes on a real street map of Westminster, London. One search engine solves all four, and an interactive demo runs every search live.
+<h1>Pathfinding lab</h1>
 
-![Breadth-first, uniform cost and A* from Piccadilly Circus to Big Ben](outputs/figures/search/city_example.png)
+<p>Breadth-first, depth-first, uniform cost, greedy best-first and A* search, compared on four problems: random mazes, the 8-puzzle, a robot on an obstacle grid and walking routes on a real street map of Westminster, London. One search engine solves all four, and an interactive demo runs every search live.</p>
+
+<p>
+<a href="https://github.com/pxnz3r/pathfinding-lab/actions/workflows/ci.yml"><img src="https://github.com/pxnz3r/pathfinding-lab/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<img src="https://img.shields.io/badge/python-3.14-blue" alt="Python 3.14">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT license"></a>
+</p>
+
+<p><a href="docs/results.md">Results</a> · <a href="docs/methodology.md">Methodology</a> · <a href="docs/deploy.md">Deploy the demo</a></p>
+
+<img src="outputs/figures/search/city_example.png" width="720" alt="Breadth-first, uniform cost and A* from Piccadilly Circus to Big Ben">
+
+</div>
+
+## How it works
+
+1. **Generate** random mazes, 8-puzzle scrambles and robot grids, and load a real street map of Westminster.
+2. **Run** breadth-first, depth-first, uniform cost, greedy best-first and A* on the same instances.
+3. **Measure** path length, cost, states explored, frontier size and time.
+4. **Test the differences** with paired sign tests and compare heuristics by effective branching factor.
+5. **Run every search yourself** in the Streamlit demo, from mazes to real Westminster streets.
 
 ## Results
 
@@ -31,6 +51,18 @@ Breadth-first, depth-first, uniform cost, greedy best-first and A* search, compa
 | A* (straight-line estimate) | 933 | 0 | 533 |
 
 Full tables and figures: [docs/results.md](docs/results.md). How it was done: [docs/methodology.md](docs/methodology.md).
+
+## How sure the results are
+
+**Every comparison is a real difference.** Each pair of algorithms ran on the same instances, and the sign test rejects chance for all eight comparisons (p < 0.05).
+
+**Breadth-first always finds the shortest maze path** (40 of 40 mazes) and explores less than depth-first on 12 mazes, more on 27.
+
+**Greedy best-first is fast but loses.** It explores less than A* on all 46 robot grids and finds a longer path on all 46.
+
+**Manhattan distance is the better heuristic.** A* explores fewer boards with it on all 61 8-puzzle boards that differ. Its effective branching factor stays around 1.1 to 1.3, against 1.2 to 1.4 for misplaced tiles and 1.5 to 1.8 for breadth-first.
+
+Every table and figure behind these is in [docs/results.md](docs/results.md).
 
 ## Run it
 
