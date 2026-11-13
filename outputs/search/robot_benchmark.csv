@@ -1,0 +1,7 @@
+Density,Algorithm,Path steps,Explored,Milliseconds,Grids,Grids with a longer path
+0.1,A*,78.0,158.42,0.93,19,0
+0.1,Greedy best-first,83.89,86.42,0.45,19,19
+0.2,A*,78.35,199.65,1.24,17,0
+0.2,Greedy best-first,91.53,106.65,0.58,17,17
+0.3,A*,79.8,314.1,2.03,10,0
+0.3,Greedy best-first,101.2,163.7,0.95,10,10
